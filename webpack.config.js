@@ -51,6 +51,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./index.html",
             filename: "index.html"
+            publicPath: "./"  // Ensures paths work on GitHub Pages
         })
     ]
 };
