@@ -8,12 +8,13 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
+        publicPath: "./"  // Ensures correct paths for GitHub Pages
     },
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
+        static: path.join(__dirname, "dist"),
         compress: true,
         port: 8080,
-        open: true,
+        open: true
     },
     module: {
         rules: [
@@ -23,13 +24,13 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["@babel/preset-env"],
-                    },
-                },
+                        presets: ["@babel/preset-env"]
+                    }
+                }
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"],
+                use: ["style-loader", "css-loader"]
             },
             {
                 test: /\.(png|jpg|gif|wav|mp3)$/,
@@ -38,18 +39,19 @@ module.exports = {
                         loader: "file-loader",
                         options: {
                             name: "[name].[ext]",
-                            outputPath: "assets/",
-                        },
-                    },
-                ],
-            },
-        ],
+                            outputPath: "assets/"
+                        }
+                    }
+                ]
+            }
+        ]
     },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: "./index.html",
-            filename: "index.html",
-        }),
-    ],
+            filename: "index.html"
+        })
+    ]
 };
+
