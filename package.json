@@ -1,0 +1,19 @@
+{
+  "name": "latif-runner",
+  "version": "1.0.0",
+  "description": "An endless runner game built with Phaser 3.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "phaser": "^3.55.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "keywords": ["game", "phaser3", "runner", "endless-runner"],
+  "author": "Your Name",
+  "license": "MIT"
+}
